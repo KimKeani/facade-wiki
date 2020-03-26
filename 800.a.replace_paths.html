@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <title>facade-wiki : basics of facade engineering</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1><a href="000.a.welcome.html">Facade-wiki</a></h1>
+  <ol>
+    <li><a href="001.a.introduction.html"> <strong>Introduction</strong></a></li>
+    <li><a href="002.a.technical.html"><strong>Technical</strong></a></li>
+    <li><a href="003.a.physical.html"><strong>Physical</strong></a></li>
+    <li><a href="004.a.mathematical.html"><strong>Mathematical</strong></a></li>
+    <li><a href="005.a.structural.html"><strong>Structural</strong></a></li>
+    <li><a href="006.a.mechanical.html"><strong>Mechanical</strong></a></li>
+    <li><a href="007.a.details.html"><strong>Details</strong></a></li>
+    <li><a href="008.a.grasshopper.html"><strong>Grasshopper</strong></a></li>
+  </ol>
+  <h2>Grasshopper</h2>
+  <div id="grid">
+    <ul>
+      <li class="list" id="current"><a href="800.a.replace_paths.html">Component Review: Replace Paths</a></li>
+      <li class="list">Component Review: Series, Domain, Remap Nummbers</li>
+      <li class="list">Component Review: Tree Branch</li>
+      <li class="list">Component Review: Friends of Shift Pattern</li>
+    </ul>
+    <div id="article">
+      <h3> Component Review: Replace Paths </h3>
+      <p> In real life <i>making groups</i> are very ordinary job. That's why making and manipulating groups in grasshopper is important.
+          <br> In this article I want to introduce a very powerful component which is frequently used in grouping data.
+          <br> The component is <strong>Replace paths</strong>.
+          <br> Here, I made some grid and you can find out original data structure.
+          Total 24 branch, 12 items in each branch.</p>
+      <p> <img src="800.i.made_grid.png" width="450"> </p>
+      <P> <img src="800.i.our_goal.png" width="700"> </p>
+      <p> By the way as you can see in the below sketch, out goal is to make total 12 branch, 24 items in each.
+          <br> In other words, I want to change <u>column based data structure to row based data structure.</u>
+      <p> As I noticed earlier, we will use Replace Paths componet. Firstly then let's take a look for it.</P>
+      <p> <img src="800.i.component_replacepaths.png" width="700"> </p>
+      <p> We need three inputs for this. First, D = Data, S = Search Mask, R = Replace as list.
+        <br> Then while using this, how can we change our data structure?
+        <br>We need some materials. We need to make <strong> list patterns </strong> that mimics new data structure.
+        <br> In this example we used component repeat data. </p>
+      <p> <img src="800.i.input_R.png" width="700"> </p>
+      <p> However, two more inputs are missed. But first one, it's easy. We can just putin our original data.
+        <br> Then the second one, what is Search mask? At first I was quite confused about this concept.
+        <br> Search mask stands for an address of original data tree. Be cafeful that's why we always have to use <strong> Tree statistics </strong> or <strong> Parm Viewer </strong> components to find out it's address.
+      </P>
+      <p> <img src="800.i.input_S.png" width="700"> </p>
+      <P> Okay. We all take a look for important inputs. Here, we can find our final script. As you can see below, original column data structure changed into row data structure. </P>
+      <p> <img src="800.i.overall_script.png" width="700"> </p>
+      <p><input type="date"></p>
+      <p><imput type"sumit" value="sumit"></p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <p>
+    <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://facade-wiki.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></p>
