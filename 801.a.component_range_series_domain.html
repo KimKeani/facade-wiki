@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <title>facade-wiki : basics of facade engineering</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1><a href="000.a.welcome.html">Facade-wiki</a></h1>
+  <ol>
+    <li><a href="001.a.introduction.html"> <strong>Introduction</strong></a></li>
+    <li><a href="002.a.technical.html"><strong>Technical</strong></a></li>
+    <li><a href="003.a.physical.html"><strong>Physical</strong></a></li>
+    <li><a href="004.a.mathematical.html"><strong>Mathematical</strong></a></li>
+    <li><a href="005.a.structural.html"><strong>Structural</strong></a></li>
+    <li><a href="006.a.mechanical.html"><strong>Mechanical</strong></a></li>
+    <li><a href="007.a.details.html"><strong>Details</strong></a></li>
+    <li><a href="008.a.grasshopper.html"><strong>Grasshopper</strong></a></li>
+  </ol>
+  <h2>Grasshopper</h2>
+  <div id="grid">
+    <ul>
+      <li class="list"><a href="800.a.replace_paths.html">Component Review: Replace Paths</a></li>
+      <li class="list" id="current"><a href="801.a.component_range_series_domain.html">Component Review: Series, Domain, Remap Numbers</a></li>
+      <li class="list">Component Review: Tree Branch</li>
+      <li class="list">Component Review: Friends of Shift Pattern</li>
+    </ul>
+    <div id="article">
+      <h3> Component Review: Range, Series and domain </h3>
+        <p> To start with, the basic thinking flow when we are using grasshopper is like this. </p>
+        <p> <img src="801.i.thinking_flow.png"> </p>
+        <p> Always! We should first make clearly about our intended result. Then we should designate targets to accomplish that goal.
+          <br> All scripts in this page follow this rule, first make sure about our goals, then find important targets to solve it!
+          <br> This article is about range, series, and domain. As three concepts are quite confusing, I want to discuss about this issue respectively. </p>
+        <p> <img src="801.i.overall_component.png"> </p>
+        <p> Roughly range and series are located in sequence folder, domain is located in domain folder. Folder name gives quick glance what is the difference between the two groups.
+        <br> Sequence is list of numbers which has numeric rule. Domain represents scope, or area.</p>
+      <h4> Range </h4>
+        <p> Think about circumstances when we need make <strong> <u> evenly distributed numbers in certain numeric area. </u> </strong> This is our <strong>GOAL.</strong>
+        <br> Component for this situation is range. This is our <strong> TARGET. </strong>
+        <br> When you see the image below, it needs two inputs, domain and (dividing) steps. Then it will print out range. </P>
+        <p> <img src="801.i.range.png"> </p>
+        <p> As you can see in the script. domain was divided into 8 steps in same interval. Which is 1.125 in this situation. </p>
+      <h4> Series </h4>
+        <p>Our second goal is to create number sequence. Also I want to manipulate the steps btweem numbers.
+        <br> Then the target will be series component. Let's take a look at the image below.
+        <br> For series component, we need three inputs. First, starting number, second step, last count.</p>
+        <p> Before take a glace at the script, let's imagine out result when we have number 1 for starting number, 10 for the step, and 8 for the count.
+        <br> Does your imagination also calls out for result : 1 -11 -21 -31 -41 -51 -61 -71? Then let's take a look at the result.</p>
+        <p> <img src="801.i.sereis.png"> </p>
+      <h4> Range vs Series </h4>
+        <P> However, if you have a sharp obeservation, you will notice that we can also make series using range component. In that case the start and the end point will be the start and end of the series.
+        <br> Although we can make series using range component, two has different usage, as range is more poweful when we want to <strong> <u> extract </u> </strong> some numbers from scope, and seires is more poweful to change steps and counts.</p>
+        <p> <img src="801.i.range_vs_sereis.png"> </p>
+      <h4> Domain </h4>
+        <p> Domain is out last material for this article. We examined two components first : Range and Series.
+        <br> However the thing is that we alredy made domains when we were testign our two components on the top.
+        <br> For range, the domain is 1 to 8, and for the series it's 1 to 71. </p>
+        <p>As you can see in the second image above, domain always has it's grammar. The grammar is <strong> <u> "x to y" </u> </strong>
+        <br> Here are some example to understand domain and other related components. </P>
+        <p> <img src="801.i.domain.png"> </p>
+        <p> The goal for the example is like this: Make a number scope and divide it into 4 groups. For each group, I want to extract same distributed 5 numbers, and change those number values in to 0~1.
+        <br> seems quite complicated, but as you closely look into this message, you will notice that is has three steps cleary.
+        <br> 1. number scope divided into 4 groups. 2. extract 5 numbers from each group 3. change those number values in 0~1.
+        <br> Our goal is clear then how about our targets? For goal #1 our target is to find way to make number scope and divide those scope into 4 groups. Goal #2 How can we evenly distribute numbers? Goal #3 How can we change number values?
+        <br> Then we will notice we need at least <strong> four </strong> key componets.</P>
+        <p> The key components and key process matches like this.
+        <br> 1-a. Making number scope : Domain
+        <br> 1-b. Divide scope in to 4 groups : Divide Domain
+        <br> 2. Make evenly distributed numbers in each group : Range
+        <br> 3. Changing number value : Remap numbers</P>
+        <p> Connecting these key processes, the result will be: </p>
+        <p> <img src="801.i.domain_script.png"> </P>
+        <p> Data is graftted and silplified for the easiness for the script, but essential is quite simple. Construct domain - Divide domain - Range - Remap Numbers.
+        <br> Componets we handled today, are very essential components used in manipulating and grouping data. For the next time, we will go through the real tutorial script to take a look for how these three concepts are really used.</p>
