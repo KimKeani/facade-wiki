@@ -97,8 +97,9 @@ li:active{
   }
   #articlegrid{
     display: block;
-  }}
+  }
   ul{
     border-right: none;
     padding-bottom: 40px;
   }
+}
