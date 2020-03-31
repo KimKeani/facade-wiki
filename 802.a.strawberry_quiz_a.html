@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <title>facade-wiki : basics of facade engineering</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1><a href="000.a.welcome.html">Facade-wiki</a></h1>
+  <ol>
+    <li><a href="001.a.introduction.html"> <strong>Introduction</strong></a></li>
+    <li><a href="002.a.technical.html"><strong>Technical</strong></a></li>
+    <li><a href="003.a.physical.html"><strong>Physical</strong></a></li>
+    <li><a href="004.a.mathematical.html"><strong>Mathematical</strong></a></li>
+    <li><a href="005.a.structural.html"><strong>Structural</strong></a></li>
+    <li><a href="006.a.mechanical.html"><strong>Mechanical</strong></a></li>
+    <li><a href="007.a.details.html"><strong>Details</strong></a></li>
+    <li><a href="008.a.grasshopper.html"><strong>Grasshopper</strong></a></li>
+  </ol>
+  <h2>Grasshopper</h2>
+  <div id="grid">
+    <ul>
+      <li class="list"><a href="800.a.replace_paths.html">Component Review: Replace Paths</a></li>
+      <li class="list"><a href="801.a.component_range_series_domain.html">Component Review: Series, Domain, Remap Numbers</a></li>
+      <li class="list" id="current"><a href="802.a.strawberry_quiz_a.html">Strawberry quiz - Solution A</a></li>
+      <li class="list"><a href="803.a.strawberry_quiz_b.html">Strawberry quiz - Solution B</a></li>
+    </ul>
+    <div id="article">
+      <h3> Strawberry quiz - Solution A </h3>
+        <p> For today's article, we are going through some fun quiz, which is called, <i>"The straberry quiz"</i></p>
+        <p><img src="802.i.strawberry.jpg"></p>
+      <h4> Quiz summary </h4>
+        <p> We have a list, which contains bunch of fruit items in it. We have total 9 types of fruits and the number of each fruits are all different.
+          The list is heavily massed up, so imagine you want to sort this list in each types of fruits, and also you want to make individual branch for type.
+          In this case what is your solution? </p>
+        <p> To summarise the quiz,
+          <br> 1. Sort a list based on the fruit type.
+          <br> 2. Make a branch for sorted fruit type. </p>
+        <h4> Data Analysis </h4>
+        <p>Before starting script, we always carefully examine our data. The typical components used in examine data are <i>Tree Statistics and Param Viewer</i>. Let's take a look for the image below.</p>
+        <p><img src="802.i.data_analysis.png"></p>
+        <p>On the left side, you can also find another component which is <i>"Sort duplicate values"</i> this component is very useful and give a lot of information especially data is very repetitive just like this. Let's briefly take a look for it. When you put in data, for the output it shows repeated values and index of each values. For example path {0.0} shows index of only and every apples.
+          <br> However using analysed information we will now go through how to sort and group this data. </P>
+        <p><img src="802.i.solutions.png"></p>
+        <p>In this article, we will cover three solutions, and upper image shows key components that we are using. Solution A starts with sort text to replace items and finally replace text.
+          Solution B starts with create set but grouping method is different. B-1 uses shift pattern and entwine while B-2 uses member index and list item.
+          In A-B1-B2 order, I personnally think it is more clean and clear solution. Let's start with solution A.</p>
+        <h4> Solution A </h4>
+        <P><img src="802.i.a_keyprocess.png"></p>
+        <p> Always be sure to clearly identify key process. Our key process is to sort fruits by their type and to group them in branch. For solution A, to achieve this key process two components were used.
+            First, text sort component, second replace paths component. As you can see in the above image, text sort funtions to sort text by a-b-c, and replace paths as mentioned in earlier article, it changes paths of cetain existing paths.
+            For the ellaborated description, check <a href="800.a.replace_paths.html" style="color:blue"><i><u>Component review : Replace Paths.</u></i></a></p>
+        <P><img src="802.i.a_intermediate_process.png"></p>
+        <div id="articlegrid">
+        <p><img src="802.i.replace_items.png"></P>
+        <P style="padding-left:20px">For this intermediate process it's quite complex and it requires labour. As we have to make replacement list to replace paths, we need several steps.
+        Firstly let's tale a look closer for the replace items component. It requires three input, which is respectively list (to modify), list (to replace with), replacement indices of item.
+        In this script as a result, stacked numbers of data will work as quide for replace paths.
+        <br> <br> The point we made list of number (process of replace items) is replace r input for replace paths doesn't works for text lists. However, making such number list is not that simple and clear way to sort data.
+        We will cover another way to sort and group this data. The article will be continued to <a href="803.a.strawberry_quiz_b.html" style="color:blue"><i><u>Strawberry quiz - Solution B.</u></i></a></p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <p>
+          <div id="disqus_thread"></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://facade-wiki.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></p>
