@@ -91,10 +91,13 @@ li:hover{
 li:active{
   background-color: lime;
 }
-@media(max-width:800px){
+@media(max-width:1000px){
   #grid{
     display: block;
   }
+  #articlegrid{
+    display: block;
+  }}
   ul{
     border-right: none;
     padding-bottom: 40px;
