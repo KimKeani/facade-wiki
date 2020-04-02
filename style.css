@@ -12,13 +12,11 @@ h1{
   border-top: thin black solid;
   padding: 10px;
   color: green;
-  background-color: lightsteelblue;
 }
 ol{
   border: dashed thin black;
   text-align: center;
   padding: 5px;
-  background-color: lemonchiffon;
 }
 li{
   display: inline;
@@ -32,7 +30,7 @@ h2{
   border-bottom: thin gray solid;
   padding-bottom: 15px;
   margin-bottom: 0;
-  padding-left: 15px;
+  padding-left: 20px;
 }
 .list{
   display: block;
@@ -78,12 +76,14 @@ img{
 #grid{
   display: grid;
   grid-template-columns: 350px 1fr;
-  padding-right: 50px;
+  padding-right: 20px;
 }
 #articlegrid{
   display: grid;
   grid-template-columns: 500px 1fr;
-
+}
+#ariclegridarticle{
+  padding-left: 20px;
 }
 li:hover{
   background-color: lime;
@@ -95,8 +95,14 @@ li:active{
   #grid{
     display: block;
   }
+  #article{
+    padding-left: 20px;
+  }
   #articlegrid{
     display: block;
+  }
+  #ariclegridarticle{
+    padding-left: 0px;
   }
   ul{
     border-right: none;
