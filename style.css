@@ -80,7 +80,7 @@ img{
 }
 #articlegrid{
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 700px 1fr;
 }
 #ariclegridarticle{
   padding-left: 20px;
